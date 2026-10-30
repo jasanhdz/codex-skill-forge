@@ -3,7 +3,7 @@ set -euo pipefail
 
 DEST="${1:-$PWD}"
 SOURCE_DIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
-RAW_BASE="${FORGE_RAW_BASE:-https://raw.githubusercontent.com/jasanhdz/forge/main}"
+RAW_BASE="${FORGE_RAW_BASE:-https://raw.githubusercontent.com/jasanhdz/codex-skill-forge/main}"
 
 if [ ! -f "$SOURCE_DIR/skill/SKILL.md" ]; then
   SOURCE_DIR="$(mktemp -d)"
@@ -36,7 +36,7 @@ install_skill "$DEST/.agents/skills"
 install_skill "$DEST/.opencode/skills"
 
 printf 'Instalado en:\n'
-  printf '  %s\n' "$DEST/.agents/skills/forge"
-  printf '  %s\n' "$DEST/.opencode/skills/forge"
+printf '  %s\n' "$DEST/.agents/skills/forge"
+printf '  %s\n' "$DEST/.opencode/skills/forge"
 printf '\nAbre Codex u OpenCode en esa carpeta y usa:\n'
 printf '  $forge "tu prompt de producto"\n'
